@@ -1,0 +1,119 @@
+Lucir en la entrevista:
+
+SoftSkills
+Comunicación efectiva: Saber expresar ideas con claridad y escuchar activamente.
+Trabajo en equipo: Colaborar con otros sin generar fricción.
+Pensamiento crítico: Analizar situaciones y tomar decisiones razonadas.
+Gestión del tiempo: Organizar prioridades y cumplir plazos.
+Empatía: Entender y considerar las emociones de los demás.
+Adaptabilidad: Ajustarse rápidamente a cambios, nuevas tecnologías o crisis.
+Resolución de conflictos: Manejar desacuerdos de manera constructiva.
+Liderazgo: Motivar, influenciar y guiar al equipo hacia un objetivo común.
+-----------
+Speech:
+Hola, mucho gusto. Mi nombre es David Irvin Olvera Lira. Actualmente me desempeño como Líder Técnico, y recientemente estuve liderando la arquitectura completa de soluciones cloud-native para el cliente CIBanco, trabajando sobre Google Cloud Platform.
+
+Aunque mi perfil es técnico-liderazgo, en este último proyecto también estuve profundamente involucrado en la implementación directa de toda la arquitectura en GCP, donde diseñé y configuré servicios como VPCs, Cloud Run, API Gateway, Load Balancing, Cloud Functions, Pub/Sub, Secret Manager, Firestore, Logging, Monitoring, Artifact Registry y Cloud SQL, asegurando escalabilidad, seguridad, observabilidad y despliegues eficientes en distintas plataformas.
+
+Estoy interesado en seguir creciendo en un enfoque más DevOps-oriented, aplicando mi experiencia para potenciar la entrega continua y la estabilidad de los entornos productivos.
+
+✅ Kubernetes: plataforma de orquestación de contenedores, Maneja pods (conjuntos de contenedores).
+
+✅ OpenShift (On-premise) o plataformas multi-Cloud (kubernetes)
+Plataforma empresarial basada en Kubernetes que permite orquestar despliegues de contenedores de forma segura, escalable y automatizada en la nube o en entornos híbridos.
+
+✅ Jenkins (Sonar) (compila .jar, .war) Integracion continua y entrega continua (CI/CD)
+Herramienta de automatización CI/CD que permite ejecutar pipelines para build, test y despliegue continuo de software en múltiples entornos.
+Usas un archivo llamado Jenkinsfile (basado en Groovy) donde defines un pipeline con etapas
+Artefactos de despliegue como imagenes Docker.
+
+✅ Fortify (SonarQube)
+Plataforma de análisis estático de seguridad (SAST) que detecta vulnerabilidades en el código fuente antes de entrar en producción, integrándose en pipelines de CI.
+
+✅ UrbanCode Deploy
+Solución de IBM para la automatización de despliegues, permitiendo gestionar versiones, entornos y flujos de entrega continua con trazabilidad y control.
+
+✅ CRONOS (Santander)
+Sistema interno de versionado y orquestación de pipelines usado en Santander, similar a GitLab o Bitbucket, con controles de calidad y gestión de builds.
+
+✅ ServiceNow
+Plataforma ITSM para gestión de incidencias, cambios y requerimientos en entornos productivos, con flujos de aprobación y trazabilidad para DevOps corporativo.
+
+integracion continua y despliegues: 
+Empaquetas la app en una imagen Docker
+Jenkins (CI/CD tradicional), Docker + Kubernetes, GCP, UrbanCode
+
+Tengo experiencia en despliegue vía Jenkins, así como despliegue directo a GCP (Cloud Run y Cloud Functions), pero también estoy familiarizado con arquitecturas contenerizadas con Docker y orquestadas con Kubernetes. Sé que existen estrategias más avanzadas como GitOps y herramientas empresariales como UrbanCode, y estoy en constante actualización para dominar estas plataformas.
+
+=========
+
+
+=========
+Session 1
+=========
+1. Onboarding
+Lissette Project manager de Motivus/Santander. Su jefa es pureza
+Plataformado del equipo de cómputo (imagen Santander). Mail con pantallazos de hardware para obtener VoBo.
+CAU de Santander en Patio Santa Fe, realizar plataformado.
+
+Híbridos ZS
+* Lina (jefa)
+* Héctor
+* Gladys
+
+1. SAML_CORP_PreDEV: VPN para desarrolladores
+2. Acceso a Service Now
+3. Acceso a GitLab: Repo legacy que está por ser decomisado
+4. Acceso a GitHub: Nuevo repo
+5. Acceso a Jenkins: Pipelines
+6. Acceso a OpenShift
+7. Acceso a Kronos (SDLC): Herramienta de Santander que lleva historial de artefactos, puede construir artefactos, compilar.
+8. Acceso a GLUON (SDLC): Herramienta de Santander (se conecta a GitHub, Jira, Confluence, VAULT)
+
+Proyectos
+1. Balanceadores (Héctor)
+2. CFDI (Gladys)
+3. Gravity (Gladys)
+4. Visual Time/Vida Ahorro/Flujo Ahorro (aplicación .NET)
+	Deploy: Github -> Kronos -> UrbanCode DEV|PRE|PRO
+	Database
+	Web
+	(No configuración)
+5. APP Seguros ZS (Backend de aplicación Mobile, 25 microservicios hechos con JAVA/Spring Boot)
+	Deploy: GitHub -> Jenkins -> OpenShift DEV/PRE/PROD
+	Migrar de GitLab/Config Service -> OpenShift/ConfigMaps
+	Pipeline
+
+=========
+Session 2
+=========
+
+1. Proyecto APP Seguros ZS
+	OpenShift PRE|PRO, región mx1, mx2
+	
+	25 microservicios de backend, desplegados en OpenShift
+	Gateway/Reverse-proxy, dentro OpenShift (pod)
+	Config Service (pod) http://configservice:8080/
+	gestionpoliza (pod)
+	gestionsiniestros (pod)
+	
+	Jenkins https://mxsegurosapp-jenkins.pro.pandora.mx.corp
+	18 pipelines actualmente apuntando a GitLab (después de la migración, deberían apuntar a GitHub SCM)
+	
+	"Flujo de liberación"
+	GitHub/Jenkins/OpenShift
+
+2. VisualTime/Vida Ahorro/Flujo Ahorro
+
+	"Flujo de liberación"
+	GitHub/Kronos/UrbanCode
+
+Release Santander:
+	1. Pre-Producción
+	2. Pruebas
+	3. Implementación
+	4. Revisión (Rollback)
+
+=========
+Session 3
+=========
